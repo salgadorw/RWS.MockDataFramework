@@ -12,6 +12,6 @@ using System.Collections.Generic;
 
         public DatabaseObjectTypeEnum DatabaseObjectType { get; set; }
 
-        public List<DatabaseObjectProperty> DatabaseObjectProperties { get; set; }
+        public List<DatabaseObjectProperty> DatabaseObjectProperties { get; private set; } = new List<DatabaseObjectProperty>();
     }
 }
