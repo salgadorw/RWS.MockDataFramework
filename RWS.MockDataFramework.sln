@@ -5,11 +5,17 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MetadataServices", "MetadataServices", "{B56A0725-80F7-442C-A6B0-0D49FFDD0E58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseMetadataReaderService", "MetadataServices\DatabaseMetadataReaderService\DatabaseMetadataReaderService.csproj", "{05A51A86-1686-4955-B2EC-BEDA0E89C968}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseMetadataReaderService", "MetadataServices\DatabaseMetadataReaderService\DatabaseMetadataReaderService.csproj", "{05A51A86-1686-4955-B2EC-BEDA0E89C968}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MockDataGeneration", "MockDataGeneration", "{49BAFA71-EF4D-4A42-B7CA-F73FB45F34C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDatabaseMockDataService", "MockDataGeneratorServices\GenerateDatabaseMockDataService\GenerateDatabaseMockDataService.csproj", "{2B166BB7-5440-4AB9-BD7A-881F38976E14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateDatabaseMockDataService", "MockDataGeneratorServices\GenerateDatabaseMockDataService\GenerateDatabaseMockDataService.csproj", "{2B166BB7-5440-4AB9-BD7A-881F38976E14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F905A267-33DE-420D-AE93-5977445D1758}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{63E010B6-0CBB-4556-8A88-0144AE81EE99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseMetadataReaderTests", "DatabaseMetadataReaderTests\DatabaseMetadataReaderTests.csproj", "{FFC80129-99D1-4E95-9AE9-7C7545677A8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +31,14 @@ Global
 		{2B166BB7-5440-4AB9-BD7A-881F38976E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B166BB7-5440-4AB9-BD7A-881F38976E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B166BB7-5440-4AB9-BD7A-881F38976E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63E010B6-0CBB-4556-8A88-0144AE81EE99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63E010B6-0CBB-4556-8A88-0144AE81EE99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63E010B6-0CBB-4556-8A88-0144AE81EE99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63E010B6-0CBB-4556-8A88-0144AE81EE99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC80129-99D1-4E95-9AE9-7C7545677A8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC80129-99D1-4E95-9AE9-7C7545677A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC80129-99D1-4E95-9AE9-7C7545677A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC80129-99D1-4E95-9AE9-7C7545677A8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +46,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{05A51A86-1686-4955-B2EC-BEDA0E89C968} = {B56A0725-80F7-442C-A6B0-0D49FFDD0E58}
 		{2B166BB7-5440-4AB9-BD7A-881F38976E14} = {49BAFA71-EF4D-4A42-B7CA-F73FB45F34C4}
+		{63E010B6-0CBB-4556-8A88-0144AE81EE99} = {F905A267-33DE-420D-AE93-5977445D1758}
+		{FFC80129-99D1-4E95-9AE9-7C7545677A8D} = {F905A267-33DE-420D-AE93-5977445D1758}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FE660F60-ECC9-403B-9DF7-20618967A95B}

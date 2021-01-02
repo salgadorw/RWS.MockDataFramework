@@ -1,11 +1,13 @@
-﻿namespace DatabaseMetadataReaderService
+﻿using System.Threading.Tasks;
+
+namespace DatabaseMetadataReaderService
 {
     
     public interface IDatabaseSchemaRead
     {
-        DatabaseSchema ReadAll(string connectionString);
+        Task<DatabaseSchema> ReadAllAsync(string connectionString);
 
-        DatabaseSchema ReadByRootDatabaseObject(string objectName, string connnectionString);
+        Task<DatabaseSchema> ReadByRootDatabaseObjectAsync(string objectName, string connnectionString);
 
     }
 }
