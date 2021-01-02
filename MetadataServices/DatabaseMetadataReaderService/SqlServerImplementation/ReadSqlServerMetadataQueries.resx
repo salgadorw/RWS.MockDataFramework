@@ -118,7 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GetDatabaseMetadataObjects" xml:space="preserve">
-    <value>SELECT * FROM [{0}].INFORMATION_SCHEMA.COLUMNS</value>
+    <value>WITH TableConstraints (TABLE_NAME, CONSTRAINT_NAME, CONSTRAINT_TYPE, COLUMN_NAME)  
+AS  
+(  
+    SELECT tc.TABLE_NAME, tc.CONSTRAINT_NAME, tc.CONSTRAINT_TYPE, cu.COLUMN_NAME
+    FROM MockedDB.INFORMATION_SCHEMA.TABLE_CONSTRAINTS tc 
+	inner join MockedDB.INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE cu on cu.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+	
+   
+)
+SELECT c.TABLE_CATALOG, c.TABLE_NAME, c.COLUMN_NAME, c.COLUMN_DEFAULT, c.CHARACTER_MAXIMUM_LENGTH, c.NUMERIC_PRECISION, c.DATA_TYPE, IIF(c.IS_NULLABLE = 'YES', 1,0) IS_NULLABLE, TC.CONSTRAINT_NAME, IIF(TC.CONSTRAINT_TYPE = 'FOREIGN KEY',1,0) IS_FK, IIF(TC.CONSTRAINT_TYPE = 'UNIQUE',1,0) IS_UNIQUE, IIF(TC.CONSTRAINT_TYPE = 'PRIMARY KEY',1,0) IS_KEY   FROM 
+MockedDB.INFORMATION_SCHEMA.COLUMNS c LEFT JOIN TableConstraints TC on tc.TABLE_NAME= c.TABLE_NAME and tc.COLUMN_NAME = c.COLUMN_NAME</value>
   </data>
   <data name="GetDatabaseMetadataObjectsKeyProperties" xml:space="preserve">
     <value>SELECT * FROM [{0}].INFORMATION_SCHEMA.KEY_COLUMN_USAGE</value>

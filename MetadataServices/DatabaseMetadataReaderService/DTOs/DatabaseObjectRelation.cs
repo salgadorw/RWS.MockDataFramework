@@ -1,4 +1,4 @@
-﻿namespace DatabaseMetadataReaderService
+﻿namespace DatabaseMetadataReaderService.DTOs
 {
     public class DatabaseObjectRelation
     {

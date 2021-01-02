@@ -1,4 +1,4 @@
-﻿namespace DatabaseMetadataReaderService
+﻿namespace DatabaseMetadataReaderService.DTOs
 {
     public enum DatabaseObjectTypeEnum
     {

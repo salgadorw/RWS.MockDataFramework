@@ -62,7 +62,16 @@ namespace DatabaseMetadataReaderService.SqlServerImplementation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT * FROM [{0}].INFORMATION_SCHEMA.COLUMNS.
+        ///   Looks up a localized string similar to WITH TableConstraints (TABLE_NAME, CONSTRAINT_NAME, CONSTRAINT_TYPE, COLUMN_NAME)  
+        ///AS  
+        ///(  
+        ///    SELECT tc.TABLE_NAME, tc.CONSTRAINT_NAME, tc.CONSTRAINT_TYPE, cu.COLUMN_NAME
+        ///    FROM MockedDB.INFORMATION_SCHEMA.TABLE_CONSTRAINTS tc 
+        ///	inner join MockedDB.INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE cu on cu.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+        ///	
+        ///   
+        ///)
+        ///SELECT c.TABLE_CATALOG, c.TABLE_NAME, c.COLUMN_NAME, c.COLUMN_DEFAULT, c.CHARACTER_MAXIMUM_LENGTH, c.NUMERIC_PRECISION, c.DATA_TYPE, IIF(c.IS_NULLABLE = [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GetDatabaseMetadataObjects {
             get {

@@ -1,4 +1,4 @@
-﻿namespace DatabaseMetadataReaderService
+﻿namespace DatabaseMetadataReaderService.DTOs
 {
     public class DatabaseObjectProperty
     {
@@ -10,11 +10,11 @@
 
         public bool IsUnique { get; set; }
 
-        public bool IsAutoFilled { get; set; }
-
         public bool IsKey { get; set; }
 
         public bool IsForeingKey {get;set;}  
+
+        public string FKName { get; set; }
 
         public string DefaultValue { get; set; }
     }

@@ -1,4 +1,4 @@
-﻿namespace DatabaseMetadataReaderService
+﻿namespace DatabaseMetadataReaderService.DTOs
 {
 
     using System.Collections.Generic;
