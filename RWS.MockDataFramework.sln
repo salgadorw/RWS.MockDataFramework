@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MetadataServices", "MetadataServices", "{B56A0725-80F7-442C-A6B0-0D49FFDD0E58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseMetadataReaderService", "MetadataServices\DatabaseMetadataReaderService\DatabaseMetadataReaderService.csproj", "{05A51A86-1686-4955-B2EC-BEDA0E89C968}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MockDataGeneration", "MockDataGeneration", "{49BAFA71-EF4D-4A42-B7CA-F73FB45F34C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDatabaseMockDataService", "MockDataGeneratorServices\GenerateDatabaseMockDataService\GenerateDatabaseMockDataService.csproj", "{2B166BB7-5440-4AB9-BD7A-881F38976E14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05A51A86-1686-4955-B2EC-BEDA0E89C968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05A51A86-1686-4955-B2EC-BEDA0E89C968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05A51A86-1686-4955-B2EC-BEDA0E89C968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05A51A86-1686-4955-B2EC-BEDA0E89C968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B166BB7-5440-4AB9-BD7A-881F38976E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B166BB7-5440-4AB9-BD7A-881F38976E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B166BB7-5440-4AB9-BD7A-881F38976E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B166BB7-5440-4AB9-BD7A-881F38976E14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{05A51A86-1686-4955-B2EC-BEDA0E89C968} = {B56A0725-80F7-442C-A6B0-0D49FFDD0E58}
+		{2B166BB7-5440-4AB9-BD7A-881F38976E14} = {49BAFA71-EF4D-4A42-B7CA-F73FB45F34C4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE660F60-ECC9-403B-9DF7-20618967A95B}
+	EndGlobalSection
+EndGlobal
