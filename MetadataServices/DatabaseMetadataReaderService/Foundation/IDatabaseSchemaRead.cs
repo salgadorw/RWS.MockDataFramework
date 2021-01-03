@@ -8,9 +8,9 @@ namespace DatabaseMetadataReaderService.Foundation
     
     public interface IDatabaseSchemaRead
     {
-        Task<DatabaseSchema> ReadAllAsync();
+        Task<SchemaMetadata> ReadAllAsync();
 
-        Task<DatabaseSchema> ReadRootObjectAndItsDependenciesAsync(params string[] rootObjects);
+        Task<SchemaMetadata> ReadRootObjectAndItsDependenciesAsync(params string[] rootObjects);
 
     }
 }

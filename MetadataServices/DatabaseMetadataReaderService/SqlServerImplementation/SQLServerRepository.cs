@@ -30,7 +30,7 @@ namespace DatabaseMetadataReaderService.SqlServerImplementation
             return await conn.QueryAsync(string.Format(ReadSqlServerMetadataQueries.GetDatabaseMetadataObjects, $"{conn.Database}"), rootObjects);
         }
 
-        public async Task<IEnumerable<dynamic>> GetDatadaseMetadataRelationships(string connectionString)
+        public async Task<IEnumerable<dynamic>> GetDatadaseMetadataRelationships()
         {
             using var conn = new SqlConnection(connectionString);
             return await conn.QueryAsync(string.Format(ReadSqlServerMetadataQueries.GetDatabaseMetadataRelationships, $"{conn.Database}"));

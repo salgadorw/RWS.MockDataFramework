@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseMetadataReaderServi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MockDataGeneration", "MockDataGeneration", "{49BAFA71-EF4D-4A42-B7CA-F73FB45F34C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateDatabaseMockDataService", "MockDataGeneratorServices\GenerateDatabaseMockDataService\GenerateDatabaseMockDataService.csproj", "{2B166BB7-5440-4AB9-BD7A-881F38976E14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateMockDataService", "MockDataGeneratorServices\GenerateDatabaseMockDataService\GenerateMockDataService.csproj", "{2B166BB7-5440-4AB9-BD7A-881F38976E14}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F905A267-33DE-420D-AE93-5977445D1758}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{63E010B6-0CBB-4556-8A88-0144AE81EE99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{63E010B6-0CBB-4556-8A88-0144AE81EE99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseMetadataReaderTests", "DatabaseMetadataReaderTests\DatabaseMetadataReaderTests.csproj", "{FFC80129-99D1-4E95-9AE9-7C7545677A8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseMetadataReaderTests", "DatabaseMetadataReaderTests\DatabaseMetadataReaderTests.csproj", "{FFC80129-99D1-4E95-9AE9-7C7545677A8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

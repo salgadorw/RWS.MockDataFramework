@@ -1,12 +1,12 @@
 ﻿namespace DatabaseMetadataReaderService.DTOs
 {
-    public class DatabaseObjectRelation
+    public class SchemaObjectDependency
     {
         public string Name { get; set; }
 
         public string PrimaryObjectName { get; set; }
 
-        public string PrimaryObjectPropertyNanme { get; set; }
+        public string PrimaryObjectPropertyName { get; set; }
 
         public string DependentObjectName { get; set; }
 

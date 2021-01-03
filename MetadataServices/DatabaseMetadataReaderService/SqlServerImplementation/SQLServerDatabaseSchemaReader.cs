@@ -19,16 +19,18 @@
         {
             this.repository = repository;
         }
-        public async Task<DatabaseSchema> ReadAllAsync()
+        public async Task<SchemaMetadata> ReadAllAsync()
         {
             var metadataObjects = await repository.GetDatadaseMetadataObjects();
 
             var result = metadataObjects.Cast<Object>().MappingDatabaseMetadataEntities();
+            var relationships = await repository.GetDatadaseMetadataRelationships();
+            result.DatabaseObjectRelations.AddRange(relationships.Cast<Object>().MappingDatabaseMetadataRelationships());        
 
             return result;
         }
 
-        public Task<DatabaseSchema> ReadRootObjectAndItsDependenciesAsync(params string[] rootObjects)
+        public Task<SchemaMetadata> ReadRootObjectAndItsDependenciesAsync(params string[] rootObjects)
         {
             throw new NotImplementedException();
         }

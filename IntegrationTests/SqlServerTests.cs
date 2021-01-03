@@ -2,6 +2,7 @@ namespace IntegrationTests
 {
     using System;
     using System.Data.SqlClient;
+    using System.Linq;
     using System.Threading.Tasks;
     using Dapper;
     using DatabaseMetadataReaderService;
@@ -32,6 +33,8 @@ namespace IntegrationTests
         {
             var result = await databaseSchemaReadService.ReadAllAsync();
             Assert.NotNull(result);
+            Assert.Equal(2, result.DatabaseObjects.Count());
+            Assert.Single(result.DatabaseObjectRelations);
         }
     }
 }

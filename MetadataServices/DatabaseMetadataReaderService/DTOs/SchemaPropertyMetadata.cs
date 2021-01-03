@@ -1,10 +1,10 @@
 ﻿namespace DatabaseMetadataReaderService.DTOs
 {
-    public class DatabaseObjectProperty
+    public class SchemaPropertyMetadata
     {
         public string Name { get; set; }
 
-        public string DbPropertyType { get; set; }
+        public string PropertyType { get; set; }
 
         public bool IsNullable { get; set; }
 
@@ -17,5 +17,11 @@
         public string FKName { get; set; }
 
         public string DefaultValue { get; set; }
+
+        public int? MaxCharacterLength { get; set; }
+
+        public int? NumericPrecision { get; set; }
+
+        public int? NumericScale { get; set; }
     }
 }
