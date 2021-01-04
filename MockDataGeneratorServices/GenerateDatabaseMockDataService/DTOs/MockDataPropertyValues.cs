@@ -7,8 +7,12 @@
 
     public class MockDataPropertyValues
     {
-        public string Name { get; set; }
+        public string ObjectName { get; set; }
+        
+        public string PropertyName { get; set; }
 
-        public List<dynamic> Values { get; private set; } = new List<dynamic>();
+        public Type PropertyType { get; set; }
+
+        public List<object> Values { get; private set; } = new List<object>();
     }
 }

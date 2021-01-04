@@ -1,6 +1,7 @@
-﻿namespace GenerateDatabaseMockDataService.Foundation
+﻿namespace GenerateMockDataService.Foundation
 {
-    using GenerateMockDataService.DTOs;
+    using global::GenerateMockDataService.DTOs;
+
     using System;
     using System.Collections.Generic;
     using System.Text;

@@ -2,6 +2,7 @@
 {
     public class SchemaPropertyMetadata
     {
+
         public string Name { get; set; }
 
         public string PropertyType { get; set; }

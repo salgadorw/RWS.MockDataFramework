@@ -8,6 +8,8 @@ namespace IntegrationTests
     using DatabaseMetadataReaderService;
     using DatabaseMetadataReaderService.Foundation;
     using DatabaseMetadataReaderService.SqlServerImplementation;
+    using GenerateMockDataService;
+    using GenerateMockDataService.Foundation;
     using Xunit;
 
 
@@ -17,6 +19,7 @@ namespace IntegrationTests
         private const string dockerContainerDBConnnectionString = "Data Source=localhost,1433;Connection Timeout=180;Initial Catalog=MockedDB;Persist Security Info=True;User ID=sa;Password=1@sqlServer";
 
         private readonly IDatabaseSchemaRead databaseSchemaReadService;
+        private readonly IGenerateMockDataService generateMockData;
 
         public SqlServerTests()
         {
@@ -26,6 +29,7 @@ namespace IntegrationTests
             }
             IDatabaseMetadataRepository repository = new SQLServerMetadataRepository(dockerContainerDBConnnectionString);
             databaseSchemaReadService = new SQLServerDatabaseSchemaReader(repository);
+            generateMockData = new GenerateMockDataService();
         }
 
         [Fact]
@@ -35,6 +39,14 @@ namespace IntegrationTests
             Assert.NotNull(result);
             Assert.Equal(2, result.DatabaseObjects.Count());
             Assert.Single(result.DatabaseObjectRelations);
+        }
+
+        [Fact]
+        public async Task GenerateSQLServerDatabaseMockDataByCOnnectionString_ReturnMockedData()
+        {
+            var result = await generateMockData.GenerateSQLServerDatabaseMockDataByCOnnectionString(dockerContainerDBConnnectionString);
+            Assert.NotNull(result);
+           
         }
     }
 }
