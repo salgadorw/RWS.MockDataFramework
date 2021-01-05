@@ -1,9 +1,9 @@
 ﻿
 using System.Threading.Tasks;
 
-using DatabaseMetadataReaderService.DTOs;
+using DatabaseMetadataReader.DTOs;
 
-namespace DatabaseMetadataReaderService.Foundation
+namespace DatabaseMetadataReader.Foundation
 {
     
     public interface IDatabaseSchemaRead

@@ -1,4 +1,4 @@
-﻿namespace DatabaseMetadataReaderService.Foundation
+﻿namespace DatabaseMetadataReader.Foundation
 { 
     public interface IDatabaseMetadataRepository
     {

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MetadataServices", "MetadataServices", "{B56A0725-80F7-442C-A6B0-0D49FFDD0E58}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseMetadataReaderService", "MetadataServices\DatabaseMetadataReaderService\DatabaseMetadataReaderService.csproj", "{05A51A86-1686-4955-B2EC-BEDA0E89C968}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseMetadataReader", "MetadataServices\DatabaseMetadataReaderService\DatabaseMetadataReader.csproj", "{05A51A86-1686-4955-B2EC-BEDA0E89C968}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MockDataGeneration", "MockDataGeneration", "{49BAFA71-EF4D-4A42-B7CA-F73FB45F34C4}"
 EndProject

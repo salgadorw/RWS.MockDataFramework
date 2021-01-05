@@ -5,9 +5,9 @@ namespace IntegrationTests
     using System.Linq;
     using System.Threading.Tasks;
     using Dapper;
-    using DatabaseMetadataReaderService;
-    using DatabaseMetadataReaderService.Foundation;
-    using DatabaseMetadataReaderService.SqlServerImplementation;
+    using DatabaseMetadataReader;
+    using DatabaseMetadataReader.Foundation;
+    using DatabaseMetadataReader.SqlServerImplementation;
     using RWS.MockGen.SqlServerImplementation;
     using RWS.MockGen.Foundation;
     using Xunit;

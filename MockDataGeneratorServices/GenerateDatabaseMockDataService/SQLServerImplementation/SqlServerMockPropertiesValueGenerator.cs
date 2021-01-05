@@ -8,7 +8,7 @@
     using System.Reflection;
     using System.Linq;
 
-    using DatabaseMetadataReaderService.DTOs;
+    using DatabaseMetadataReader.DTOs;
     using RWS.MockGen.DTOs;
 
     internal class SqlServerMockPropertiesValueGenerator : IMockPropertyValuesGenerator

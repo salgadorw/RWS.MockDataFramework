@@ -1,4 +1,4 @@
-﻿namespace DatabaseMetadataReaderService.SqlServerImplementation
+﻿namespace DatabaseMetadataReader.SqlServerImplementation
 {
     using System;
     using System.Collections.Generic;  
@@ -7,8 +7,8 @@
     using System.Text;
     using System.Threading.Tasks;
     using Dapper;
-    using DatabaseMetadataReaderService.DTOs;
-    using DatabaseMetadataReaderService.Foundation;
+    using DatabaseMetadataReader.DTOs;
+    using DatabaseMetadataReader.Foundation;
 
 
     public class SQLServerDatabaseSchemaReader : IDatabaseSchemaRead

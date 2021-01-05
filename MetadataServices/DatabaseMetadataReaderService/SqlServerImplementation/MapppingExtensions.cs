@@ -1,4 +1,4 @@
-﻿namespace DatabaseMetadataReaderService.SqlServerImplementation
+﻿namespace DatabaseMetadataReader.SqlServerImplementation
 {
 
     using System;
@@ -6,7 +6,7 @@
     using System.Linq;
     using System.Text;
 
-    using DatabaseMetadataReaderService.DTOs;
+    using DatabaseMetadataReader.DTOs;
 
 
     public static class MapppingExtensions

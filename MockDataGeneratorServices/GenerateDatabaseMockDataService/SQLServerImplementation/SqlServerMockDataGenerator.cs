@@ -1,4 +1,4 @@
-﻿using DatabaseMetadataReaderService.DTOs;
+﻿using DatabaseMetadataReader.DTOs;
 using RWS.MockGen.DTOs;
 using RWS.MockGen.Foundation;
 using System;
