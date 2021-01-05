@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseMetadataReader.SqlServerImplementation {
+namespace MockMetadataReader.SqlServerImplementation {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace DatabaseMetadataReader.SqlServerImplementation {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DatabaseMetadataReader.SqlServerImplementation.ReadSqlServerMetadataQueries", typeof(ReadSqlServerMetadataQueries).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MockMetadataReader.SqlServerImplementation.ReadSqlServerMetadataQueries", typeof(ReadSqlServerMetadataQueries).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
