@@ -1,9 +1,8 @@
-namespace DatabaseMetadataReaderTests
+using System;
+using Xunit;
+
+namespace MockDataGeneratorTests
 {
-    using System;
-    using Xunit;
-
-
     public class Tests
     {
         [Fact]
