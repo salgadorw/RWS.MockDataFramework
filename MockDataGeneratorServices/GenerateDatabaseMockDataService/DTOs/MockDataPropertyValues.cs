@@ -7,12 +7,10 @@
 
     public class MockDataPropertyValues
     {
-        public string ObjectName { get; set; }
-        
         public string PropertyName { get; set; }
 
         public Type PropertyType { get; set; }
 
-        public List<object> Values { get; private set; } = new List<object>();
+        public List<object> Values { get; set; } = new List<object>();
     }
 }

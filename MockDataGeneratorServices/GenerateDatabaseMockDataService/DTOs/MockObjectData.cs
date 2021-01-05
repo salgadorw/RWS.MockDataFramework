@@ -8,7 +8,7 @@ namespace GenerateMockDataService.DTOs
     {
         public string SchemaName { get; set; }
         public string ObjectName { get; set; }
-
+               
         public IEnumerable<MockDataPropertyValues> propertyValues { get; set; } = new List<MockDataPropertyValues>();
          
     }

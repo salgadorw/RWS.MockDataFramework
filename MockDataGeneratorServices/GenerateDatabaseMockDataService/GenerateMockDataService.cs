@@ -20,9 +20,10 @@
         {
             var DatabaseMetadata = await new SQLServerDatabaseSchemaReader(new SQLServerMetadataRepository(connectionString)).ReadAllAsync();
 
-
+            var generateMockDataService = new GenerateSqlServerMockData();
+            var result = await generateMockDataService.GenerateMockDataByMetadataSchema(DatabaseMetadata, new MockDataGeneratorOptions() { DataAmount = 10 }).ConfigureAwait(false);
            
-            return null;
+            return result.ToString();
 
         }
     }

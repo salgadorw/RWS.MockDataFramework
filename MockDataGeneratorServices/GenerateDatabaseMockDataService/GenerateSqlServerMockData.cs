@@ -11,24 +11,32 @@ namespace GenerateMockDataService
 {
     public class GenerateSqlServerMockData : IMockDataGemerator
     {
-        public Task<IEnumerable<MockObjectData>> GenerateMockDataByMetadataSchema(SchemaMetadata schema, params MockDataGeneratorOptions[] options)
+        public async Task<IEnumerable<MockObjectData>> GenerateMockDataByMetadataSchema(SchemaMetadata schema, params MockDataGeneratorOptions[] options)
         {
-            return Task.FromResult( 
-                schema.DatabaseObjects
-                .Select(s => new MockObjectData()
-                    {   SchemaName = schema.Name, 
-                        ObjectName = s.Name, 
-                        propertyValues = 
-                        s.DatabaseObjectProperties
-                        .Select
-                        (sp => 
-                            sp.GenerateSqlServerMockedFieldValues
-                            (
-                                options.Where(w=> w.ObjectName.Equals(s.Name)).FirstOrDefault()
-                            )
-                        ) 
-                    }
-                ));
+            return await Task.Run(()=>
+               
+                    schema.DatabaseObjects.Select
+                    (s =>
+                        
+                        {
+                            var propertyGenerator = new MockPropertyValuesGenerator();
+                            var opt = options.Where(w => (w.ObjectName ?? "").Equals(s.Name) || w.ObjectName == null).FirstOrDefault();
+                            return new MockObjectData()
+                                {
+                                    SchemaName = schema.Name,
+                                    ObjectName = s.Name,
+                                    propertyValues =
+                                    s.DatabaseObjectProperties
+                                    .Select(
+                                    sp =>
+                                        {
+                                            return propertyGenerator.GenerateSqlServerMockedFieldValues(sp, opt);
+                                        }
+                                    )
+                                };
+                        }
+                    ).ToList()
+                ).ConfigureAwait(false);
         }
     }
 }

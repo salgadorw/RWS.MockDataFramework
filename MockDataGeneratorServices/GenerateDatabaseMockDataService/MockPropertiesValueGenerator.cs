@@ -6,23 +6,25 @@
     using global::GenerateMockDataService.DTOs;
     using System;
     using System.Data;
+    using System.Data.SqlTypes;
     using System.Reflection;
     using System.Linq;
 
-    internal static class MockPropertiesValueGeneratorExtensions
+    public class MockPropertyValuesGenerator
     {
-        public static MockDataPropertyValues GenerateSqlServerMockedFieldValues(this SchemaPropertyMetadata propertyMetadata, MockDataGeneratorOptions options)
-        {
 
+        public MockDataPropertyValues GenerateSqlServerMockedFieldValues(SchemaPropertyMetadata propertyMetadata, MockDataGeneratorOptions options)
+        {
             var result = new MockDataPropertyValues();
 
             result.PropertyName = propertyMetadata.Name;
+
+            result.Values.AddRange(new object[(options?.DataAmount ?? 100)]);
                         
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.BigInt).ToLower())) {
 
                 result.PropertyType = typeof(Int64);
-                result.Values.AddRange(result.PropertyType.GenerateMaxValueDataFromPrimitiveType(100));
-            
+                GenerateMaxValueDataFromPrimitiveType(result);            
             }
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Binary).ToLower())) { 
@@ -35,7 +37,11 @@
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Char).ToLower())) { }
             else
-            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.DateTime).ToLower())) { }
+            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.DateTime).ToLower())) {
+
+                result.PropertyType = typeof(DateTime);
+                GenerateDateTimeNowValue(result);
+            }
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Decimal).ToLower())) { }
             else
@@ -57,8 +63,8 @@
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.UniqueIdentifier).ToLower())) {
 
-                if (!string.IsNullOrEmpty(propertyMetadata.DefaultValue))
-                    return null;
+                result.PropertyType = typeof(Guid);
+                GenerateGuidRamdomValues(result);
             }
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.SmallDateTime).ToLower())) { }
@@ -85,30 +91,41 @@
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Structured).ToLower())) { }
             else
-            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Date).ToLower())) { }
+            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Date).ToLower())) {
+                result.PropertyType = typeof(SqlDateTime);
+                GenerateMaxValueDataFromPrimitiveType(result);
+            }
             else
-            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Time).ToLower())) { }
+            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Time).ToLower())) {
+
+                result.PropertyType = typeof(DateTime);
+                GenerateDateTimeNowValue(result);
+
+            }
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.DateTime2).ToLower())) { }
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.DateTimeOffset).ToLower())) { }
             else
             { }        
-            return null;
+            return result;
         }
 
-        public static List<Object> GenerateMaxValueDataFromPrimitiveType(this Type type, int amount)
+        private void GenerateMaxValueDataFromPrimitiveType(MockDataPropertyValues mockDataProperty)
         {
+            var value = mockDataProperty.PropertyType.GetField("MaxValue", BindingFlags.Public | BindingFlags.FlattenHierarchy | BindingFlags.Static).GetValue(new object());
+            mockDataProperty.Values = mockDataProperty.Values.Select(s => value).ToList();
+        }
 
-            var result = new object[amount];
-            var value = type.GetField("MaxValue", BindingFlags.Public | BindingFlags.FlattenHierarchy | BindingFlags.Static).GetValue(new object());
-            foreach (var item in result.Select((value, i) => new { i, value }))
-               
-            {
-                result[item.i] = value;
-                
-            }
-            return result.ToList();
+        private void GenerateDateTimeNowValue(MockDataPropertyValues mockDataProperty)
+        {
+            var value = (object)DateTime.Now;
+            mockDataProperty.Values = mockDataProperty.Values.Select(s => value).ToList();
+        }
+
+        private void GenerateGuidRamdomValues(MockDataPropertyValues mockDataProperty)
+        {
+            mockDataProperty.Values = mockDataProperty.Values.Select(s => (object)Guid.NewGuid()).ToList();
         }
     }
         
