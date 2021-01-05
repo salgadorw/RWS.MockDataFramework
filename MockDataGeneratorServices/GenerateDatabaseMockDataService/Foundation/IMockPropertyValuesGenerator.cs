@@ -1,7 +1,7 @@
 ﻿using DatabaseMetadataReader.DTOs;
-using RWS.MockGen.DTOs;
+using MockDataGenerator.DTOs;
 
-namespace RWS.MockGen
+namespace MockDataGenerator
 {
     public interface IMockPropertyValuesGenerator
     {

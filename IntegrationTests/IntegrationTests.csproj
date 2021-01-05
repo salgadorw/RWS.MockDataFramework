@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MetadataServices\DatabaseMetadataReaderService\DatabaseMetadataReader.csproj" />
-    <ProjectReference Include="..\MockDataGeneratorServices\GenerateDatabaseMockDataService\RWS.MockGen.csproj" />
+    <ProjectReference Include="..\MockDataGeneratorServices\GenerateDatabaseMockDataService\MockDataGenerator.csproj" />
   </ItemGroup>
 
   <ItemGroup>

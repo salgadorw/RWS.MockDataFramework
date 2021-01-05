@@ -1,4 +1,4 @@
-﻿namespace RWS.MockGen.DTOs
+﻿namespace MockDataGenerator.DTOs
 {
     using System;
     using System.Collections.Generic;

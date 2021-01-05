@@ -1,6 +1,6 @@
-﻿namespace RWS.MockGen.Foundation
+﻿namespace MockDataGenerator.Foundation
 {
-    using global::RWS.MockGen.DTOs;
+    using global::MockDataGenerator.DTOs;
 
     using System;
     using System.Collections.Generic;

@@ -1,14 +1,14 @@
-﻿namespace RWS.MockGen.SqlServerImplementation
+﻿namespace MockDataGenerator.SqlServerImplementation
 {
     
     using System;
     using System.Collections.Generic;
     using System.Text;
     using System.Threading.Tasks;
-    using global::RWS.MockGen.Foundation;
+    using global::MockDataGenerator.Foundation;
     using DatabaseMetadataReader.Foundation;
     using DatabaseMetadataReader.SqlServerImplementation;
-    using RWS.MockGen.DTOs;
+    using MockDataGenerator.DTOs;
 
     public class SqlServerMockDataGeneratorService : IMockDataGeneratorService
     {

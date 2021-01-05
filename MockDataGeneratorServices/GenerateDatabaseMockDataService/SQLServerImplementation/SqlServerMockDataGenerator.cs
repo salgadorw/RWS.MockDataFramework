@@ -1,13 +1,13 @@
 ﻿using DatabaseMetadataReader.DTOs;
-using RWS.MockGen.DTOs;
-using RWS.MockGen.Foundation;
+using MockDataGenerator.DTOs;
+using MockDataGenerator.Foundation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RWS.MockGen.SqlServerImplementation
+namespace MockDataGenerator.SqlServerImplementation
 {
     internal class SqlserverMockDataGenerator : IMockDataGenerator
     {

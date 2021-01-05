@@ -9,15 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseMetadataReader", "M
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MockDataGeneration", "MockDataGeneration", "{49BAFA71-EF4D-4A42-B7CA-F73FB45F34C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RWS.MockGen", "MockDataGeneratorServices\GenerateDatabaseMockDataService\RWS.MockGen.csproj", "{2B166BB7-5440-4AB9-BD7A-881F38976E14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockDataGenerator", "MockDataGeneratorServices\GenerateDatabaseMockDataService\MockDataGenerator.csproj", "{2B166BB7-5440-4AB9-BD7A-881F38976E14}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F905A267-33DE-420D-AE93-5977445D1758}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{63E010B6-0CBB-4556-8A88-0144AE81EE99}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseMetadataReaderTests", "DatabaseMetadataReaderTests\DatabaseMetadataReaderTests.csproj", "{FFC80129-99D1-4E95-9AE9-7C7545677A8D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockFramework.Foundation", "MockFramework.Foundation\MockFramework.Foundation.csproj", "{340CC607-7C01-427F-BEE5-FD4D17DC1634}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{FFC80129-99D1-4E95-9AE9-7C7545677A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFC80129-99D1-4E95-9AE9-7C7545677A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFC80129-99D1-4E95-9AE9-7C7545677A8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{340CC607-7C01-427F-BEE5-FD4D17DC1634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{340CC607-7C01-427F-BEE5-FD4D17DC1634}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{340CC607-7C01-427F-BEE5-FD4D17DC1634}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{340CC607-7C01-427F-BEE5-FD4D17DC1634}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

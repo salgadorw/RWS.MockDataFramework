@@ -8,8 +8,8 @@ namespace IntegrationTests
     using DatabaseMetadataReader;
     using DatabaseMetadataReader.Foundation;
     using DatabaseMetadataReader.SqlServerImplementation;
-    using RWS.MockGen.SqlServerImplementation;
-    using RWS.MockGen.Foundation;
+    using MockDataGenerator.SqlServerImplementation;
+    using MockDataGenerator.Foundation;
     using Xunit;
 
 

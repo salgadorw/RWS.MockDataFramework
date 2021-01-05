@@ -1,11 +1,11 @@
 ﻿using DatabaseMetadataReader.DTOs;
-using RWS.MockGen.DTOs;
+using MockDataGenerator.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RWS.MockGen.Foundation
+namespace MockDataGenerator.Foundation
 {
     public interface IMockDataGenerator
     {

@@ -1,4 +1,4 @@
-﻿namespace RWS.MockGen.SqlServerImplementation
+﻿namespace MockDataGenerator.SqlServerImplementation
 {
    
    
@@ -9,7 +9,7 @@
     using System.Linq;
 
     using DatabaseMetadataReader.DTOs;
-    using RWS.MockGen.DTOs;
+    using MockDataGenerator.DTOs;
 
     internal class SqlServerMockPropertiesValueGenerator : IMockPropertyValuesGenerator
     {
