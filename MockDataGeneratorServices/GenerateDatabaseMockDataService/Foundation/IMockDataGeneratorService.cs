@@ -1,20 +1,20 @@
-﻿namespace GenerateMockDataService.Foundation
+﻿namespace RWS.MockGen.Foundation
 {
-    using global::GenerateMockDataService.DTOs;
+    using global::RWS.MockGen.DTOs;
 
     using System;
     using System.Collections.Generic;
     using System.Text;
     using System.Threading.Tasks;
 
-    public interface IGenerateMockDataService
+    public interface IMockDataGeneratorService
     {
         /// <summary>
         /// 
         /// </summary>
         /// <param name="connectionString"></param>
         /// <returns>DatabaseInsertDataScriptGenerated</returns>
-        Task<string> GenerateSQLServerDatabaseMockDataByCOnnectionString(string connectionString, params MockDataGeneratorOptions[] options);
+        Task<string> GenerateMockDataByConnectionString(string connectionString, params MockDataGeneratorOptions[] options);
         
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace DatabaseMetadataReaderService.DTOs
 {
-    public class SchemaObjectDependency
+    public class SchemaObjectDependencyMedatada
     {
         public string Name { get; set; }
 

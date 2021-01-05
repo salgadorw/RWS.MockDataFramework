@@ -4,7 +4,7 @@ namespace DatabaseMetadataReaderTests
     using Xunit;
 
 
-    public class UnitTest1
+    public class tests
     {
         [Fact]
         public void Test1()

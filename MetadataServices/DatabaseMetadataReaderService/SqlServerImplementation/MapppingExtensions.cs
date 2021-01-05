@@ -51,12 +51,12 @@
             return result;
         }
 
-        public static IEnumerable<SchemaObjectDependency> MappingDatabaseMetadataRelationships(this IEnumerable<object> rawMetadata)
+        public static IEnumerable<SchemaObjectDependencyMedatada> MappingDatabaseMetadataRelationships(this IEnumerable<object> rawMetadata)
         {
             IEnumerable<dynamic> rawMetadataRelations = rawMetadata.Cast<dynamic>();
             foreach (var relationMetadata in rawMetadataRelations)
             {
-                yield return new SchemaObjectDependency() { Name = relationMetadata.CONSTRAINT_NAME, PrimaryObjectName = relationMetadata.TABLE_NAME, PrimaryObjectPropertyName = relationMetadata.COLUMN_NAME, DependentObjectName = relationMetadata.FKTABLE, DependentObjectPropertyName = relationMetadata.FKCOLUMN };
+                yield return new SchemaObjectDependencyMedatada() { Name = relationMetadata.CONSTRAINT_NAME, PrimaryObjectName = relationMetadata.TABLE_NAME, PrimaryObjectPropertyName = relationMetadata.COLUMN_NAME, DependentObjectName = relationMetadata.FKTABLE, DependentObjectPropertyName = relationMetadata.FKCOLUMN };
             }
 
         }

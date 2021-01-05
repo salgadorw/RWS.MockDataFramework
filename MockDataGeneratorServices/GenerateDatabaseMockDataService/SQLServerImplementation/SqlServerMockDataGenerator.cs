@@ -1,15 +1,15 @@
 ﻿using DatabaseMetadataReaderService.DTOs;
-using GenerateMockDataService.DTOs;
-using GenerateMockDataService.Foundation;
+using RWS.MockGen.DTOs;
+using RWS.MockGen.Foundation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenerateMockDataService
+namespace RWS.MockGen.SqlServerImplementation
 {
-    public class GenerateSqlServerMockData : IMockDataGemerator
+    internal class SqlserverMockDataGenerator : IMockDataGenerator
     {
         public async Task<IEnumerable<MockObjectData>> GenerateMockDataByMetadataSchema(SchemaMetadata schema, params MockDataGeneratorOptions[] options)
         {
@@ -19,7 +19,7 @@ namespace GenerateMockDataService
                     (s =>
                         
                         {
-                            var propertyGenerator = new MockPropertyValuesGenerator();
+                            var propertyGenerator = new SqlServerMockPropertiesValueGenerator();
                             var opt = options.Where(w => (w.ObjectName ?? "").Equals(s.Name) || w.ObjectName == null).FirstOrDefault();
                             return new MockObjectData()
                                 {
@@ -30,7 +30,7 @@ namespace GenerateMockDataService
                                     .Select(
                                     sp =>
                                         {
-                                            return propertyGenerator.GenerateSqlServerMockedFieldValues(sp, opt);
+                                            return propertyGenerator.GenerateMockedValuesByPropertyMetadata(sp, opt);
                                         }
                                     )
                                 };

@@ -1,13 +1,13 @@
 ﻿using DatabaseMetadataReaderService.DTOs;
-using GenerateMockDataService.DTOs;
+using RWS.MockGen.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenerateMockDataService.Foundation
+namespace RWS.MockGen.Foundation
 {
-    public interface IMockDataGemerator
+    public interface IMockDataGenerator
     {
         Task<IEnumerable<MockObjectData>> GenerateMockDataByMetadataSchema(SchemaMetadata schema, MockDataGeneratorOptions[] options);
     }

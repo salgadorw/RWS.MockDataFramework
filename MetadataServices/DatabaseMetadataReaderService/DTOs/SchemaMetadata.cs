@@ -13,6 +13,6 @@
 
         public List<SchemaObjectMetadata> DatabaseObjects { get; private set; } = new List<SchemaObjectMetadata>();
 
-        public List<SchemaObjectDependency> DatabaseObjectRelations { get; private set; } = new List<SchemaObjectDependency>();
+        public List<SchemaObjectDependencyMedatada> DatabaseObjectRelations { get; private set; } = new List<SchemaObjectDependencyMedatada>();
     }
 }

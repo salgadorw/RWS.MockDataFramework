@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseMetadataReaderServi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MockDataGeneration", "MockDataGeneration", "{49BAFA71-EF4D-4A42-B7CA-F73FB45F34C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateMockDataService", "MockDataGeneratorServices\GenerateDatabaseMockDataService\GenerateMockDataService.csproj", "{2B166BB7-5440-4AB9-BD7A-881F38976E14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RWS.MockGen", "MockDataGeneratorServices\GenerateDatabaseMockDataService\RWS.MockGen.csproj", "{2B166BB7-5440-4AB9-BD7A-881F38976E14}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F905A267-33DE-420D-AE93-5977445D1758}"
 EndProject

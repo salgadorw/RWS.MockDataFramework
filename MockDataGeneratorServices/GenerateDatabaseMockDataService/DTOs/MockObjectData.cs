@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GenerateMockDataService.DTOs
+namespace RWS.MockGen.DTOs
 {
     public class MockObjectData
     {

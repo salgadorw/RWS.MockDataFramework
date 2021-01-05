@@ -1,43 +1,48 @@
-﻿namespace GenerateMockDataService
+﻿namespace RWS.MockGen.SqlServerImplementation
 {
-    using System.Collections.Generic;
-
-    using DatabaseMetadataReaderService.DTOs;
-    using global::GenerateMockDataService.DTOs;
+   
+   
     using System;
     using System.Data;
     using System.Data.SqlTypes;
     using System.Reflection;
     using System.Linq;
 
-    public class MockPropertyValuesGenerator
+    using DatabaseMetadataReaderService.DTOs;
+    using RWS.MockGen.DTOs;
+
+    internal class SqlServerMockPropertiesValueGenerator : IMockPropertyValuesGenerator
     {
 
-        public MockDataPropertyValues GenerateSqlServerMockedFieldValues(SchemaPropertyMetadata propertyMetadata, MockDataGeneratorOptions options)
+        public MockDataPropertyValues GenerateMockedValuesByPropertyMetadata(SchemaPropertyMetadata propertyMetadata, MockDataGeneratorOptions options)
         {
             var result = new MockDataPropertyValues();
 
             result.PropertyName = propertyMetadata.Name;
 
             result.Values.AddRange(new object[(options?.DataAmount ?? 100)]);
-                        
-            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.BigInt).ToLower())) {
+
+            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.BigInt).ToLower()))
+            {
 
                 result.PropertyType = typeof(Int64);
-                GenerateMaxValueDataFromPrimitiveType(result);            
+                GenerateMaxValueDataFromPrimitiveType(result);
             }
             else
-            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Binary).ToLower())) { 
-            
+            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Binary).ToLower()))
+            {
+
             }
             else
-            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Bit).ToLower())) { 
-            
+            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Bit).ToLower()))
+            {
+
             }
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Char).ToLower())) { }
             else
-            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.DateTime).ToLower())) {
+            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.DateTime).ToLower()))
+            {
 
                 result.PropertyType = typeof(DateTime);
                 GenerateDateTimeNowValue(result);
@@ -61,7 +66,8 @@
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Real).ToLower())) { }
             else
-            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.UniqueIdentifier).ToLower())) {
+            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.UniqueIdentifier).ToLower()))
+            {
 
                 result.PropertyType = typeof(Guid);
                 GenerateGuidRamdomValues(result);
@@ -91,12 +97,14 @@
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Structured).ToLower())) { }
             else
-            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Date).ToLower())) {
+            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Date).ToLower()))
+            {
                 result.PropertyType = typeof(SqlDateTime);
                 GenerateMaxValueDataFromPrimitiveType(result);
             }
             else
-            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Time).ToLower())) {
+            if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.Time).ToLower()))
+            {
 
                 result.PropertyType = typeof(DateTime);
                 GenerateDateTimeNowValue(result);
@@ -107,7 +115,7 @@
             else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.DateTimeOffset).ToLower())) { }
             else
-            { }        
+            { }
             return result;
         }
 
@@ -128,6 +136,6 @@
             mockDataProperty.Values = mockDataProperty.Values.Select(s => (object)Guid.NewGuid()).ToList();
         }
     }
-        
-        
+
+
 }
