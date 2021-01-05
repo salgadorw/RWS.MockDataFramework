@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MetadataServices\DatabaseMetadataReaderService\DatabaseMetadataReader.csproj" />
+    <ProjectReference Include="..\MockMetadataReaderService\MockMetadataReader.csproj" />
   </ItemGroup>
 
 </Project>

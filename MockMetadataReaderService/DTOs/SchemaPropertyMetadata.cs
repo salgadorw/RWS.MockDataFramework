@@ -1,4 +1,4 @@
-﻿namespace DatabaseMetadataReader.DTOs
+﻿namespace MockMetadataReader.DTOs
 {
     public class SchemaPropertyMetadata
     {

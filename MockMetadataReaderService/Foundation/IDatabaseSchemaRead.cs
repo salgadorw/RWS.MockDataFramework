@@ -1,9 +1,9 @@
 ﻿
 using System.Threading.Tasks;
 
-using DatabaseMetadataReader.DTOs;
+using MockMetadataReader.DTOs;
 
-namespace DatabaseMetadataReader.Foundation
+namespace MockMetadataReader.Foundation
 {
     
     public interface IDatabaseSchemaRead

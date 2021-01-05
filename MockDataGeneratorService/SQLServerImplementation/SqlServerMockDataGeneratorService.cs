@@ -6,8 +6,8 @@
     using System.Text;
     using System.Threading.Tasks;
     using global::MockDataGenerator.Foundation;
-    using DatabaseMetadataReader.Foundation;
-    using DatabaseMetadataReader.SqlServerImplementation;
+    using MockMetadataReader.Foundation;
+    using MockMetadataReader.SqlServerImplementation;
     using MockDataGenerator.DTOs;
 
     public class SqlServerMockDataGeneratorService : IMockDataGeneratorService

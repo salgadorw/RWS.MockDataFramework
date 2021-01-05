@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-using DatabaseMetadataReader.Foundation;
+using MockMetadataReader.Foundation;
+using MockMetadataReader.SqlServerImplementation;
 
 using Dapper;
 
-namespace DatabaseMetadataReader.SqlServerImplementation
+namespace MockMetadataReader.SqlServerImplementation
 {
     public class SQLServerMetadataRepository : IDatabaseMetadataRepository, IDisposable
     {

@@ -1,4 +1,4 @@
-﻿namespace DatabaseMetadataReader.Foundation
+﻿namespace MockMetadataReader.Foundation
 { 
     public interface IDatabaseMetadataRepository
     {

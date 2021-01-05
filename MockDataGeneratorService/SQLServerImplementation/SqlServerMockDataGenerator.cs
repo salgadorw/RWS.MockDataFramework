@@ -1,4 +1,4 @@
-﻿using DatabaseMetadataReader.DTOs;
+﻿using MockMetadataReader.DTOs;
 using MockDataGenerator.DTOs;
 using MockDataGenerator.Foundation;
 using System;

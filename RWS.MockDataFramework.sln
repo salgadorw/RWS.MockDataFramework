@@ -13,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "Tests\I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockDataGenerator", "MockDataGeneratorService\MockDataGenerator.csproj", "{963A04EF-26AE-4942-AE91-3AED661F07AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockMetadataReader", "MockMetadataReaderService\DatabaseMetadataReaderService\MockMetadataReader.csproj", "{77B7CAB0-1E77-4BA5-BF9D-ACF22C90248B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockMetadataReaderTests", "Tests\DatabaseMetadataReaderTests\MockMetadataReaderTests.csproj", "{D934CBE1-EAEF-4CE7-81C9-FAED7BEE8CF1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockDataGeneratorTests", "Tests\MockDataGeneratorTests\MockDataGeneratorTests.csproj", "{3F9654F3-FBCD-45D4-B790-618BB25FD43A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockMetadataReader", "MockMetadataReaderService\MockMetadataReader.csproj", "{B24AB8F4-C9D4-44B4-A6F7-07EF2E5925F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockMetadataReaderTests", "Tests\MockMetadataReaderTests\MockMetadataReaderTests.csproj", "{ED7E5630-DF37-4815-9DCB-A18EC5DE3A9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,18 +33,18 @@ Global
 		{963A04EF-26AE-4942-AE91-3AED661F07AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{963A04EF-26AE-4942-AE91-3AED661F07AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{963A04EF-26AE-4942-AE91-3AED661F07AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77B7CAB0-1E77-4BA5-BF9D-ACF22C90248B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77B7CAB0-1E77-4BA5-BF9D-ACF22C90248B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77B7CAB0-1E77-4BA5-BF9D-ACF22C90248B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77B7CAB0-1E77-4BA5-BF9D-ACF22C90248B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D934CBE1-EAEF-4CE7-81C9-FAED7BEE8CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D934CBE1-EAEF-4CE7-81C9-FAED7BEE8CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D934CBE1-EAEF-4CE7-81C9-FAED7BEE8CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D934CBE1-EAEF-4CE7-81C9-FAED7BEE8CF1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3F9654F3-FBCD-45D4-B790-618BB25FD43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3F9654F3-FBCD-45D4-B790-618BB25FD43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F9654F3-FBCD-45D4-B790-618BB25FD43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F9654F3-FBCD-45D4-B790-618BB25FD43A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B24AB8F4-C9D4-44B4-A6F7-07EF2E5925F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B24AB8F4-C9D4-44B4-A6F7-07EF2E5925F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B24AB8F4-C9D4-44B4-A6F7-07EF2E5925F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B24AB8F4-C9D4-44B4-A6F7-07EF2E5925F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED7E5630-DF37-4815-9DCB-A18EC5DE3A9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED7E5630-DF37-4815-9DCB-A18EC5DE3A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED7E5630-DF37-4815-9DCB-A18EC5DE3A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED7E5630-DF37-4815-9DCB-A18EC5DE3A9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,9 +52,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{31C45424-FFCB-4CB5-912F-84887C6DFAE6} = {F905A267-33DE-420D-AE93-5977445D1758}
 		{963A04EF-26AE-4942-AE91-3AED661F07AE} = {49BAFA71-EF4D-4A42-B7CA-F73FB45F34C4}
-		{77B7CAB0-1E77-4BA5-BF9D-ACF22C90248B} = {B56A0725-80F7-442C-A6B0-0D49FFDD0E58}
-		{D934CBE1-EAEF-4CE7-81C9-FAED7BEE8CF1} = {F905A267-33DE-420D-AE93-5977445D1758}
 		{3F9654F3-FBCD-45D4-B790-618BB25FD43A} = {F905A267-33DE-420D-AE93-5977445D1758}
+		{B24AB8F4-C9D4-44B4-A6F7-07EF2E5925F0} = {B56A0725-80F7-442C-A6B0-0D49FFDD0E58}
+		{ED7E5630-DF37-4815-9DCB-A18EC5DE3A9B} = {F905A267-33DE-420D-AE93-5977445D1758}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FE660F60-ECC9-403B-9DF7-20618967A95B}
