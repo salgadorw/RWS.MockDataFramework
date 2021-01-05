@@ -8,7 +8,7 @@ namespace IntegrationTests
     using DatabaseMetadataReaderService;
     using DatabaseMetadataReaderService.Foundation;
     using DatabaseMetadataReaderService.SqlServerImplementation;
-    using RWS.MockGen;
+    using RWS.MockGen.SqlServerImplementation;
     using RWS.MockGen.Foundation;
     using Xunit;
 
@@ -25,7 +25,8 @@ namespace IntegrationTests
         {
             using (var conn = new SqlConnection(dockerContainerConnnectionString))
             {
-                conn.ExecuteAsync(SqlScripts.CreateTestDatabase).Wait();
+                conn.Execute(SqlScripts.CreateTestDatabase);
+              
             }
             IDatabaseMetadataRepository repository = new SQLServerMetadataRepository(dockerContainerDBConnnectionString);
             databaseSchemaReadService = new SQLServerDatabaseSchemaReader(repository);
