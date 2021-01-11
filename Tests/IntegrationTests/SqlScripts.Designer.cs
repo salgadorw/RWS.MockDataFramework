@@ -69,18 +69,16 @@ namespace IntegrationTests {
         ///
         ///ALTER DATABASE [MockedDB] SET COMPATIBILITY_LEVEL = 140;
         ///
-        ///IF (1 = FULLTEXTSERVICEPROPERTY(&apos;IsFullTextInstalled&apos;))
-        ///begin
-        ///EXEC [MockedDB].[dbo].[sp_fulltext_database] @action = &apos;enable&apos;;
-        ///end
-        ///
         ///ALTER DATABASE [MockedDB] SET ANSI_NULL_DEFAULT OFF;
         ///
         ///ALTER DATABASE [MockedDB] SET ANSI_NULLS OFF ;
         ///
         ///ALTER DATABASE [MockedDB] SET ANSI_PADDING OFF;
         ///ALTER DATABASE [MockedDB] SET ANSI_WARNINGS OFF;
-        ///ALTER DATABASE [MockedD [rest of string was truncated]&quot;;.
+        ///ALTER DATABASE [MockedDB] SET ARITHABORT OFF;
+        ///ALTER DATABASE [MockedDB] SET AUTO_CLOSE OFF;
+        ///ALTER DATABASE [MockedDB] SET AUTO_SHRINK OFF;
+        ///ALTER DATABASE [Mo [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CreateTestDatabase {
             get {

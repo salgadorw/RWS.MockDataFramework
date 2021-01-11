@@ -1,4 +1,6 @@
-﻿namespace MockMetadataReader.DTOs
+﻿using System;
+
+namespace MockMetadataReader.DTOs
 {
     public class SchemaPropertyMetadata
     {
@@ -24,5 +26,6 @@
         public int? NumericPrecision { get; set; }
 
         public int? NumericScale { get; set; }
+      
     }
 }

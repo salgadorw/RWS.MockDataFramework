@@ -15,8 +15,8 @@ namespace IntegrationTests
 
     public class SqlServerTests
     {
-        private const string dockerContainerConnnectionString = "Data Source=localhost,1433;Connection Timeout=180;Initial Catalog=master;Persist Security Info=True;User ID=sa;Password=1@sqlServer";
-        private const string dockerContainerDBConnnectionString = "Data Source=localhost,1433;Connection Timeout=180;Initial Catalog=MockedDB;Persist Security Info=True;User ID=sa;Password=1@sqlServer";
+        private const string dockerContainerConnnectionString = "Data Source=localhost,1433;Connection Timeout=180;Initial Catalog=master;Persist Security Info=True;User ID=sa;Password=1@xptoXPTO";
+        private const string dockerContainerDBConnnectionString = "Data Source=localhost,1433;Connection Timeout=180;Initial Catalog=MockedDB;Persist Security Info=True;User ID=sa;Password=1@xptoXPTO";
 
         private readonly IDatabaseSchemaRead databaseSchemaReadService;
         private readonly IMockDataGeneratorService mockDataGeneratorService;
@@ -46,7 +46,7 @@ namespace IntegrationTests
         public async Task GenerateSQLServerDatabaseMockDataByCOnnectionString_ReturnMockedData()
         {
             var result = await mockDataGeneratorService.GenerateMockDataByConnectionString(dockerContainerDBConnnectionString);
-            Assert.NotNull(result);
+            Assert.NotEmpty(result);
            
         }
     }

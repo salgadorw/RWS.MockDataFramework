@@ -126,11 +126,6 @@ CREATE DATABASE [MockedDB];
 
 ALTER DATABASE [MockedDB] SET COMPATIBILITY_LEVEL = 140;
 
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [MockedDB].[dbo].[sp_fulltext_database] @action = 'enable';
-end
-
 ALTER DATABASE [MockedDB] SET ANSI_NULL_DEFAULT OFF;
 
 ALTER DATABASE [MockedDB] SET ANSI_NULLS OFF ;
