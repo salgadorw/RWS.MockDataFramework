@@ -15,7 +15,7 @@ namespace MockDataGenerator.SqlServerImplementation
         {
             var notDependentObjects = schema.DatabaseObjects.Where(w => !w.HasDependency);
             var dataFromObjectsWithNoDependency= notDependentObjects
-            .AsParallel().Select
+            .Select
             (s => {
                 var opt = options.Where(w => (w.ObjectName ?? "").Equals(s.Name) || w.ObjectName == null).FirstOrDefault();
                  return GenerateMockDataByMetadataSchemaAndDependenciesData(s, opt, null, schema.DatabaseObjectRelations).Result;
@@ -37,7 +37,7 @@ namespace MockDataGenerator.SqlServerImplementation
 
             var MetadataObjectToBeGenerated = schemaObjects.Where(w => dependencyMetadatas.Select(s => s.DependentObjectName).Contains(w.Name));
 
-            var newMockedData = MetadataObjectToBeGenerated.AsParallel().Select(s => {
+            var newMockedData = MetadataObjectToBeGenerated.Select(s => {
                 var opt = options.Where(w => (w.ObjectName ?? "").Equals(s.Name) || w.ObjectName == null).FirstOrDefault();
                 return GenerateMockDataByMetadataSchemaAndDependenciesData(s, opt, MockedData, dependencyMetadatas.Where(w=>w.DependentObjectName.Equals(s.Name)).ToList()).Result;
             }).ToList();
@@ -47,24 +47,24 @@ namespace MockDataGenerator.SqlServerImplementation
             return await GenerateMetadataForSchemaObject(schemaObjects, dependencyMetadatas, MockedData, options);
         }
 
-        private async Task<MockObjectData> GenerateMockDataByMetadataSchemaAndDependenciesData(SchemaObjectMetadata schemaObjectMetadata, MockDataGeneratorOptions options, IEnumerable<MockObjectData> mockObjectsDependents, List<SchemaObjectDependencyMedatada> dependencyMetadatas)
+        private async Task<MockObjectData> GenerateMockDataByMetadataSchemaAndDependenciesData(SchemaObjectMetadata schemaObjectMetadata, MockDataGeneratorOptions options, IEnumerable<MockObjectData> mockDataCreated, List<SchemaObjectDependencyMedatada> dependencyMetadatas)
         {
             {
-                var propertyGenerator = new SqlServerMockPropertiesValueGenerator();                
-
-                return await Task.Run(()=> new MockObjectData()
-                {
-                    Schema = schemaObjectMetadata,
-                    propertyValues =
-                        schemaObjectMetadata.DatabaseObjectProperties
+                var propertyGenerator = new SqlServerMockPropertiesValueGenerator();
+                var dependencies = dependencyMetadatas?.Where(w => w.DependentObjectName.Equals(schemaObjectMetadata.Name));
+                var dependencyData = mockDataCreated?.SelectMany(s => s.propertyValues.Where(w=> dependencies?.Where(ww=>ww.PrimaryObjectName.Equals(s.Schema.Name) && ww.PrimaryObjectPropertyName.Equals(w.PropertyName)).Any()??false));
+                return await Task.Run(()=> {
+                   return new MockObjectData()
+                    {
+                        Schema = schemaObjectMetadata,
+                        propertyValues = schemaObjectMetadata.DatabaseObjectProperties
                         .Select(
                         sp =>
                         {
-                            dependencyMetadatas.Where(w => throw new NotImplementedException());
-                            var dependencyData = mockObjectsDependents.SelectMany(s => s.propertyValues.Where(w => throw new NotImplementedException()));
-                            return propertyGenerator.GenerateMockedValuesByPropertyMetadata(sp, options, dependencyData.Where(w=>w.PropertyName.Equals(sp.Name)).FirstOrDefault());
+                            return propertyGenerator.GenerateMockedValuesByPropertyMetadata(sp, options, dependencyData?.Where(w => w.PropertyName.Equals(sp.Name)).FirstOrDefault());
                         }
                         )
+                    };
                 }).ConfigureAwait(false);
             }
         }
