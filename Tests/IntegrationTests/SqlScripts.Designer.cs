@@ -61,9 +61,31 @@ namespace IntegrationTests {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to USE [master];
-        ///
-        ///DROP DATABASE IF EXISTS [MockedDB];
+        ///   Looks up a localized string similar to 
+        ///USE [MockedDB];
+        ////****** Object:  Table [dbo].[testMock]    Script Date: 1/2/2021 4:00:48 AM ******/
+        ///SET ANSI_NULLS ON;
+        ///SET QUOTED_IDENTIFIER ON;
+        ///CREATE TABLE [dbo].[testMock](
+        ///	[id] [uniqueidentifier] ROWGUIDCOL  NOT NULL,
+        ///	[test] [nchar](10) NULL,
+        ///	[decimal] [decimal](18, 0) NULL,
+        ///	[float] [float] NULL,
+        ///	[datetime] [datetime] NULL,
+        ///	[date] [date] NULL,
+        ///	[hour] [time](7) NULL,
+        /// CONSTRAINT [PK_testMock] PRIMARY KEY CLUSTERED(
+        ///	[id] ASC
+        ///)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGN [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string CreateTables {
+            get {
+                return ResourceManager.GetString("CreateTables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DROP DATABASE IF EXISTS [MockedDB];
         ///
         ///CREATE DATABASE [MockedDB];
         ///
@@ -78,11 +100,11 @@ namespace IntegrationTests {
         ///ALTER DATABASE [MockedDB] SET ARITHABORT OFF;
         ///ALTER DATABASE [MockedDB] SET AUTO_CLOSE OFF;
         ///ALTER DATABASE [MockedDB] SET AUTO_SHRINK OFF;
-        ///ALTER DATABASE [Mo [rest of string was truncated]&quot;;.
+        ///ALTER DATABASE [MockedDB] SET AUTO_ [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string CreateTestDatabase {
+        internal static string DropAndCreateDatabase {
             get {
-                return ResourceManager.GetString("CreateTestDatabase", resourceCulture);
+                return ResourceManager.GetString("DropAndCreateDatabase", resourceCulture);
             }
         }
     }

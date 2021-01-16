@@ -25,8 +25,10 @@ namespace IntegrationTests
         {
             using (var conn = new SqlConnection(dockerContainerConnnectionString))
             {
-                conn.Execute(SqlScripts.CreateTestDatabase);
-              
+                conn.Open();
+                conn.Execute(SqlScripts.DropAndCreateDatabase);
+                conn.Execute(SqlScripts.CreateTables);
+                conn.Close();
             }
             IDatabaseMetadataRepository repository = new SQLServerMetadataRepository(dockerContainerDBConnnectionString);
             databaseSchemaReadService = new SQLServerDatabaseSchemaReader(repository);
