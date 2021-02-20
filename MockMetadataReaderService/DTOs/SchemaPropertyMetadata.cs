@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MockMetadataReader.DTOs
+﻿namespace MockMetadataReader.DTOs
 {
     public class SchemaPropertyMetadata
     {

@@ -1,8 +1,6 @@
 ﻿namespace MockDataGenerator.DTOs
 {
-    using System;
     using System.Collections.Generic;
-    using System.Text;
 
 
     public class MockDataGeneratorOptions

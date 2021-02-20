@@ -1,6 +1,5 @@
 namespace MockMetadataReaderTests
 {
-    using System;
     using Xunit;
 
 

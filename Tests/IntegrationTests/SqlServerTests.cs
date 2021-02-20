@@ -1,11 +1,9 @@
 namespace IntegrationTests
 {
-    using System;
     using System.Data.SqlClient;
     using System.Linq;
     using System.Threading.Tasks;
     using Dapper;
-    using MockMetadataReader;
     using MockMetadataReader.Foundation;
     using MockMetadataReader.SqlServerImplementation;
     using MockDataGenerator.SqlServerImplementation;
@@ -15,8 +13,8 @@ namespace IntegrationTests
 
     public class SqlServerTests
     {
-        private const string dockerContainerConnnectionString = "Data Source=localhost,1433;Connection Timeout=180;Initial Catalog=master;Persist Security Info=True;User ID=sa;Password=1@xptoXPTO";
-        private const string dockerContainerDBConnnectionString = "Data Source=localhost,1433;Connection Timeout=180;Initial Catalog=MockedDB;Persist Security Info=True;User ID=sa;Password=1@xptoXPTO";
+        private const string dockerContainerConnnectionString = "Data Source=localhost,1433;Connection Timeout=180;Initial Catalog=master;Persist Security Info=True;User ID=sa;Password=1@sqlServer";
+        private const string dockerContainerDBConnnectionString = "Data Source=localhost,1433;Connection Timeout=180;Initial Catalog=MockedDB;Persist Security Info=True;User ID=sa;Password=1@sqlServer";
 
         private readonly IDatabaseSchemaRead databaseSchemaReadService;
         private readonly IMockDataGeneratorService mockDataGeneratorService;
@@ -48,7 +46,12 @@ namespace IntegrationTests
         public async Task GenerateSQLServerDatabaseMockDataByCOnnectionString_ReturnMockedData()
         {
             var result = await mockDataGeneratorService.GenerateMockDataByConnectionString(dockerContainerDBConnnectionString);
+                      
             Assert.NotEmpty(result);
+
+            var values = result.First().propertyValues.First(f => f.PropertyName.Equals("id")).Values.Where(w => result.Last().propertyValues.Where(w => w.PropertyName.Equals("testMock")).First().Values.Contains(w));
+
+            Assert.NotEmpty(values);
            
         }
     }

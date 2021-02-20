@@ -1,7 +1,7 @@
 ﻿namespace MockDataGenerator.SqlServerImplementation
 {
-   
-   
+
+
     using System;
     using System.Data;
     using System.Data.SqlTypes;
@@ -10,7 +10,6 @@
 
     using MockMetadataReader.DTOs;
     using MockDataGenerator.DTOs;
-    using System.Text;
 
     internal class SqlServerMockPropertiesValueGenerator : IMockPropertyValuesGenerator
     {
@@ -27,7 +26,9 @@
             {
                 result.PropertyType = dependecyValues.PropertyType;
                AddRamdomValueForMockDataProperties(result, r => dependecyValues.Values[r.Next(dependecyValues.Values.Count)]);
-            }
+
+             
+            }else
             if (propertyMetadata.PropertyType.Equals(nameof(SqlDbType.BigInt).ToLower()))
             {
 
